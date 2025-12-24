@@ -1,0 +1,379 @@
+/* =========================
+   Premium Header (Clean)
+   ========================= */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 120;
+    background: rgba(255, 255, 255, .82);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(15, 23, 42, .08);
+    transition: box-shadow .2s ease, background .2s ease;
+}
+
+/* subtle premium highlight line */
+.header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: linear-gradient(90deg,
+            rgba(31, 122, 74, .45),
+            rgba(27, 95, 191, .35),
+            rgba(31, 122, 74, .20));
+    opacity: .55;
+}
+
+.header--scrolled {
+    box-shadow: 0 16px 40px rgba(2, 6, 23, .10);
+    background: rgba(255, 255, 255, .92);
+}
+
+/* ---------- Top strip ---------- */
+.header-top {
+    background:
+        radial-gradient(800px 160px at 15% 30%, rgba(31, 122, 74, .14), transparent 60%),
+        radial-gradient(700px 160px at 85% 40%, rgba(27, 95, 191, .12), transparent 60%),
+        rgba(255, 255, 255, .55);
+    border-bottom: 1px solid rgba(15, 23, 42, .06);
+}
+
+.header-top-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+    font-size: 12px;
+    color: rgba(15, 23, 42, .86);
+}
+
+.top-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.top-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(31, 122, 74, .22);
+    border: 1px solid rgba(31, 122, 74, .35);
+}
+
+.top-text {
+    font-weight: 800;
+    color: rgba(15, 23, 42, .84);
+}
+
+.top-sep {
+    color: rgba(15, 23, 42, .35);
+    font-weight: 900;
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.top-actions a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 23, 42, .08);
+    background: rgba(255, 255, 255, .65);
+    color: rgba(15, 23, 42, .78);
+    font-weight: 800;
+    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.top-actions a:hover {
+    transform: translateY(-1px);
+    border-color: rgba(15, 23, 42, .14);
+    background: rgba(255, 255, 255, .92);
+}
+
+/* ---------- Main row ---------- */
+.header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+}
+
+/* Brand */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 260px;
+}
+
+.brand-logo {
+    height: 84px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    padding: 8px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .75);
+    border: 1px solid rgba(15, 23, 42, .08);
+    box-shadow: 0 14px 34px rgba(2, 6, 23, .08);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.05;
+}
+
+.brand-title {
+    font-weight: 950;
+    font-size: 18px;
+    letter-spacing: .3px;
+    color: rgba(15, 23, 42, .92);
+}
+
+.brand-sub {
+    margin-top: 6px;
+    font-size: 13px;
+    color: rgba(15, 23, 42, .62);
+    font-weight: 700;
+}
+
+.brand-sub-dot {
+    margin: 0 8px;
+    color: rgba(15, 23, 42, .35);
+    font-weight: 900;
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Premium nav pill */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 999px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .72));
+    border: 1px solid rgba(15, 23, 42, .10);
+    box-shadow: 0 16px 40px rgba(2, 6, 23, .08);
+}
+
+.nav a {
+    padding: 12px 14px;
+    border-radius: 999px;
+    font-weight: 900;
+    font-size: 14px;
+    color: rgba(15, 23, 42, .76);
+    border: 1px solid transparent;
+    transition: transform .15s ease, background .15s ease, border-color .15s ease, color .15s ease;
+}
+
+.nav a:hover {
+    transform: translateY(-1px);
+    background: rgba(15, 23, 42, .06);
+    border-color: rgba(15, 23, 42, .10);
+    color: rgba(15, 23, 42, .92);
+}
+
+.nav a.active {
+    background: rgba(31, 122, 74, .13);
+    border-color: rgba(31, 122, 74, .24);
+    color: #0b3b23;
+}
+
+/* CTA */
+.nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+/* ---------- Burger (with X animation) ---------- */
+.burger {
+    display: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 18px;
+    border: 1px solid rgba(15, 23, 42, .12);
+    background: rgba(255, 255, 255, .85);
+    box-shadow: 0 14px 34px rgba(2, 6, 23, .10);
+    cursor: pointer;
+    position: relative;
+}
+
+.burger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: rgba(15, 23, 42, .85);
+    margin: 6px auto;
+    border-radius: 99px;
+    transition: transform .18s ease, opacity .18s ease;
+}
+
+.burger.is-open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.is-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 980px) {
+    .top-actions {
+        display: none;
+    }
+
+    .brand {
+        min-width: unset;
+    }
+
+    .brand-logo {
+        height: 58px;
+        padding: 6px;
+        border-radius: 16px;
+    }
+
+    .brand-title {
+        font-size: 16px;
+    }
+
+    .brand-sub {
+        font-size: 12px;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav {
+        position: absolute;
+        left: 18px;
+        right: 18px;
+        top: 132px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 14px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, .98);
+        border: 1px solid rgba(15, 23, 42, .10);
+        box-shadow: 0 26px 70px rgba(2, 6, 23, .14);
+    }
+
+    .nav--open {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .nav a {
+        border-radius: 16px;
+        padding: 14px 14px;
+        background: rgba(15, 23, 42, .03);
+        border: 1px solid rgba(15, 23, 42, .08);
+    }
+
+    .nav-cta {
+        margin-left: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 2px;
+    }
+}
+
+/* =========================
+   Shrink Header on Scroll
+   ========================= */
+
+/* Animate key elements */
+.header,
+.header-top,
+.header-main,
+.brand-logo,
+.brand-title,
+.brand-sub,
+.nav-links,
+.nav a,
+.nav-cta {
+    transition: all .25s ease;
+}
+
+/* When scrolled */
+.header--scrolled .header-main {
+    padding: 8px 0;
+    /* tighter */
+}
+
+/* Logo shrinks */
+.header--scrolled .brand-logo {
+    height: 64px;
+    padding: 6px;
+}
+
+/* Brand text tightens */
+.header--scrolled .brand-title {
+    font-size: 16px;
+}
+
+.header--scrolled .brand-sub {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+/* Nav pill tightens */
+.header--scrolled .nav-links {
+    padding: 6px;
+}
+
+/* Nav links slightly smaller */
+.header--scrolled .nav a {
+    padding: 12px 12px;
+    font-size: 16px;
+}
+
+/* CTA buttons tighten */
+.header--scrolled .nav-cta .btn {
+    padding: 10px 16px;
+    font-size: 13px;
+}
+
+/* Top bar fades slightly (not hidden) */
+.header--scrolled .header-top {
+    opacity: .85;
+}

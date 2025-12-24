@@ -1,0 +1,187 @@
+.stephead {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stepbadge {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+    background: rgba(21, 101, 192, .25);
+    border: 1px solid rgba(21, 101, 192, .45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+}
+
+.callout {
+    margin-top: 18px;
+}
+
+.service-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.service-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.service-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.timeline {
+    margin-top: 18px;
+    border-left: 2px solid rgba(255, 255, 255, .14);
+    padding-left: 14px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(46, 125, 50, .75);
+    margin-top: 6px;
+}
+
+.pill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.pill {
+    border: 1px solid rgba(255, 255, 255, .14);
+    background: rgba(255, 255, 255, .06);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.map {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .12);
+    margin-top: 10px;
+}
+
+.map iframe {
+    width: 100%;
+    height: 320px;
+    border: 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.form-field label {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+.form input,
+.form select,
+.form textarea {
+    width: 100%;
+    padding: 12px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, .14);
+    background: rgba(0, 0, 0, .20);
+    color: var(--text);
+    outline: none;
+}
+
+.form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+    color: rgba(238, 243, 255, .55);
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.contact-list {
+    padding-left: 18px;
+}
+
+.contact-list li {
+    margin: 8px 0;
+}
+
+.faq-item {
+    border-top: 1px solid rgba(255, 255, 255, .10);
+    padding: 8px 0;
+}
+
+.faq-item:first-child {
+    border-top: none;
+}
+
+.faq-q {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    background: transparent;
+    color: var(--text);
+    border: none;
+    padding: 10px 0;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.faq-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, .14);
+    background: rgba(255, 255, 255, .05);
+}
+
+@media (max-width: 900px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
