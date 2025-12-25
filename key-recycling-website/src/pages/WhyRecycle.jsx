@@ -75,9 +75,7 @@ export default function WhyRecycle() {
                             <Button to="/contact" variant="primary" size="lg">
                                 Request Pickup
                             </Button>
-                            <Button to="/how-it-works" variant="secondary" size="lg">
-                                How It Works
-                            </Button>
+
                         </div>
                     </div>
                 </div>
