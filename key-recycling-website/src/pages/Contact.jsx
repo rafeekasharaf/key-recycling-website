@@ -105,9 +105,10 @@ export default function Contact() {
 
                     <div className="panel">
                         <h3 className="h3">Contact details</h3>
-                        <p className="">
-                            Update these details before pushing live:
+                        <p className="muted">
+                            You can reach us directly or submit a pickup request using the form.
                         </p>
+
                         <div className="contact-box">
                             <div className="contact-row">
                                 <strong>Email</strong>
@@ -119,7 +120,7 @@ export default function Contact() {
                             </div>
                             <div className="contact-row">
                                 <strong>Address</strong>
-                                <span>38 Green Street, Souderton,Pa 18964</span>
+                                <span>8400 US-13, Bristol, PA 19007</span>
                             </div>
                             <div className="contact-row">
                                 <strong>Service</strong>
@@ -127,8 +128,27 @@ export default function Contact() {
                             </div>
                         </div>
 
+                        {/* MAP */}
+                        <div className="contact-map">
+                            <iframe
+                                title="Key Recycling LLC Location"
+                                src="https://www.google.com/maps?q=8400%20US-13%20Bristol%20PA%2019007&output=embed"
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
+                        </div>
 
+                        <div style={{ marginTop: 14 }}>
+                            <Button
+                                href="https://www.google.com/maps/dir/?api=1&destination=8400+US-13+Bristol+PA+19007"
+                                variant="ghost"
+                                size="sm"
+                            >
+                                Get Directions
+                            </Button>
+                        </div>
                     </div>
+
                 </div>
             </Section>
         </>

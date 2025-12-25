@@ -45,7 +45,7 @@ export default function Footer() {
                     <a href="tel:+14843691217">+1 (484) 369-1217</a>
 
                     <div className="muted" style={{ marginTop: 10 }}>Address</div>
-                    <div>38 Green Street, Souderton,Pa 18964</div>
+                    <div>8400 US-13, Bristol, PA 19007</div>
                 </div>
             </div>
 
