@@ -221,10 +221,6 @@ export default function WhyRecycle() {
 
                                 </div>
 
-                                {/* <div className="energy-media energy-media--hero">
-                                    <img src={powerImg} alt="Power gauge showing energy use" loading="lazy" />
-                                </div> */}
-
                                 <div className="energy-stats">
                                     <div className="energy-stat">
                                         <div className="energy-stat-num">20%+</div>
@@ -312,11 +308,8 @@ export default function WhyRecycle() {
                 </div>
             </Section>
 
-
-
-
             {/* SAVE MONEY */}
-            {/* SAVE MONEY (Premium) */}
+
             <Section
                 tone="plain"
                 eyebrow="Save money"
@@ -332,10 +325,7 @@ export default function WhyRecycle() {
                                     <div>
                                         <div className="money-kicker">Savings snapshot</div>
                                         <h3 className="h3" style={{ marginTop: 8 }}>It pays to recycle old appliances</h3>
-                                        {/* <p>
-                                            Older refrigerators and freezers often cost more to operate than people expect.
-                                            When you remove the "always-on" power draw, the savings can add up year after year.
-                                        </p> */}
+
                                     </div>
 
                                     <div className="money-badge">
@@ -361,11 +351,6 @@ export default function WhyRecycle() {
                                         </p>
                                     </div>
                                 </div>
-
-
-                                {/* <div className="money-media">
-                                    <img src={moneyImg} alt="Money savings visual" loading="lazy" />
-                                </div> */}
 
                                 <div className="money-highlights">
                                     <div className="money-highlight">
@@ -461,7 +446,7 @@ export default function WhyRecycle() {
 
 
             {/* PROTECT THE PLANET */}
-            {/* PROTECT THE PLANET (Premium) */}
+
             <Section
                 tone="gradient"
                 eyebrow="Protect the environment"
@@ -477,12 +462,8 @@ export default function WhyRecycle() {
                                 <div>
                                     <div className="planet-kicker">Why it matters</div>
                                     <h3 className="h3" style={{ marginTop: 8 }}>Landfill disposal is risky</h3>
-                                    {/* <p >
-                                        Older appliances can include refrigerants and other materials that should be recovered and handled responsibly.
-                                        Proper recycling helps safeguard the environment and reduces what enters the waste stream.
-                                    </p> */}
-                                </div>
 
+                                </div>
                                 <div className="planet-badge">
                                     <div className="planet-badge-big">~95%</div>
                                     <div className="planet-badge-sub">of each appliance can be recycled (materials recovery). </div>
