@@ -23,12 +23,16 @@ export default function Footer() {
 
                     <div className="footer-actions">
                         <Button to="/contact" variant="primary" size="sm">Request Pickup</Button>
-                        <Button to="/services" variant="secondary" size="sm">Services</Button>
+                        <Button href="tel:+14843691217" variant="secondary" size="sm" className="cta-btn">
+                            Call Now
+                        </Button>
                     </div>
                 </div>
 
                 <div className="footer-col">
                     <div className="footer-h">Pages</div>
+                    <a href="/">Home</a>
+                    <a href="/why-recycle">Why Recycle</a>
                     <a href="/about">About</a>
                     <a href="/services">Services</a>
                     <a href="/how-it-works">How It Works</a>

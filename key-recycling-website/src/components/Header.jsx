@@ -84,7 +84,7 @@ export default function Header() {
                         <Button to="/contact" variant="primary" size="lg" onClick={close}>
                             Request Pickup
                         </Button>
-                        <Button href="tel:+14843691217" variant="ghost" size="sm" className="cta-btn">
+                        <Button href="tel:+14843691217" variant="secondary" size="sm" className="cta-btn">
                             Call Now
                         </Button>
                     </div>

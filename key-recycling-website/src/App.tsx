@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import WhyRecycle from "./pages/WhyRecycle";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
+import { Analytics } from "@vercel/analytics/react";
 
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
       </main>
       <Footer />
       <ScrollToTopButton />
+      <Analytics />
     </BrowserRouter>
   );
 }

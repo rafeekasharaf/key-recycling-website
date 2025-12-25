@@ -65,7 +65,7 @@ export default function Services() {
 
                         <div className="service-actions">
                             <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
-                            <Button to="/faq" variant="ghost" size="sm">Questions?</Button>
+                            <Button to="/why-recycle" variant="ghost" size="sm">Why recycle?</Button>
                         </div>
                     </div>
 
@@ -93,7 +93,7 @@ export default function Services() {
 
                         <div className="service-actions">
                             <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
-                            <Button to="/how-it-works" variant="ghost" size="sm">See process</Button>
+                            <Button to="/why-recycle" variant="ghost" size="sm">Why recycle?</Button>
                         </div>
                     </div>
 
@@ -120,8 +120,8 @@ export default function Services() {
                         </div>
 
                         <div className="service-actions">
-                            <Button to="/contact" variant="primary" size="sm">Request quote</Button>
-                            <Button to="/service-areas" variant="ghost" size="sm">Coverage</Button>
+                            <Button to="/contact" variant="primary" size="sm">Talk to us</Button>
+                            <Button to="/about" variant="ghost" size="sm">About</Button>
                         </div>
                     </div>
 
@@ -208,7 +208,9 @@ export default function Services() {
                     </div>
                     <div className="cta-actions">
                         <Button to="/contact" variant="primary" size="lg">Request Pickup</Button>
-                        <Button to="/how-it-works" variant="secondary" size="lg">How it works</Button>
+                        <Button href="tel:+14843691217" variant="secondary" size="sm" className="cta-btn">
+                            Call Now
+                        </Button>
                     </div>
                 </div>
             </section>

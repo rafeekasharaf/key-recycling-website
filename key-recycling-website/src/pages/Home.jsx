@@ -1,8 +1,18 @@
 import { useEffect, useRef } from "react";
+import { useMemo, useState } from "react";
+import Lightbox from "../components/Lightbox";
 import Section from "../components/Section";
 import Button from "../components/Button";
 import IconCard from "../components/IconCard";
 import heroImg from "../assets/images/home-hero.png";
+
+import rad1 from "../assets/images/rad/rad-plant-1.jpg";
+import rad2 from "../assets/images/rad/rad-plant-2.jpg";
+import rad3 from "../assets/images/rad/rad-plant-3.jpg";
+import rad4 from "../assets/images/rad/rad-plant-4.jpg";
+import rad5 from "../assets/images/rad/rad-plant-5.jpg";
+import rad6 from "../assets/images/rad/rad-plant-6.jpg";
+import rad7 from "../assets/images/rad/rad-plant-7.jpg";
 
 function useReveal() {
     const ref = useRef(null);
@@ -36,6 +46,19 @@ export default function Home() {
     const whyRef = useReveal();
     const howRef = useReveal();
     const trustRef = useReveal();
+
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [lightboxIndex, setLightboxIndex] = useState(0);
+
+    const plantImages = useMemo(() => ([
+        { src: rad1, alt: "RAD recycling plant equipment overview", caption: "Inside the RAD recycling plant — real equipment and operations." },
+        { src: rad2, alt: "RAD recycling plant equipment wide view" },
+        { src: rad3, alt: "RAD plant machinery close-up with operator" },
+        { src: rad4, alt: "RAD plant filtration and collection system" },
+        { src: rad5, alt: "RAD plant cyclone system structure" },
+        { src: rad6, alt: "RAD plant processing unit close-up" },
+        { src: rad7, alt: "RAD plant outdoor equipment staging area" },
+    ]), []);
 
     return (
         <>
@@ -123,7 +146,7 @@ export default function Home() {
                             </ul>
                             <div className="recycle-actions">
                                 <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
-                                <Button to="/how-it-works" variant="ghost" size="sm">See process</Button>
+                                <Button to="/services" variant="ghost" size="sm">Coverage</Button>
                             </div>
                         </div>
 
@@ -143,7 +166,7 @@ export default function Home() {
                             </ul>
                             <div className="recycle-actions">
                                 <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
-                                <Button to="/how-it-works" variant="ghost" size="sm">See process</Button>
+                                <Button to="/services" variant="ghost" size="sm">Coverage</Button>
                             </div>
                         </div>
 
@@ -201,7 +224,8 @@ export default function Home() {
                                 <li>Material recovery where possible</li>
                             </ul>
                             <div className="panel-footer">
-                                <Button to="/how-it-works" variant="ghost" size="sm">See our process</Button>
+                                <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
+                                <Button to="/why-recycle" variant="ghost" size="sm">Why recycle?</Button>
                             </div>
                         </div>
 
@@ -218,6 +242,7 @@ export default function Home() {
                             </ul>
                             <div className="panel-footer">
                                 <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
+                                <Button to="/why-recycle" variant="ghost" size="sm">Why recycle?</Button>
                             </div>
                         </div>
                     </div>
@@ -277,12 +302,52 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="center-row">
-                        <Button to="/how-it-works" variant="secondary" size="md">View full process</Button>
-                        <Button to="/contact" variant="primary" size="md">Request pickup</Button>
+                    {/* RAD PLANT GALLERY */}
+                    <div className="plant-block">
+                        <div className="plant-head">
+                            <h3 className="h2" style={{ margin: 0 }}>RAD Recycling Plant</h3>
+                            <p className="plant-sub">
+                                A look inside the facility where appliances are processed with safety-first handling and responsible material recovery.
+                                These photos highlight real equipment and real operations behind our recycling workflow.
+                            </p>
+                        </div>
+
+                        <div className="plant-gallery" aria-label="RAD Recycling Plant photos">
+                            {[
+                                { src: rad1, alt: "RAD recycling plant equipment overview" },
+                                { src: rad2, alt: "RAD recycling plant equipment wide view" },
+                                { src: rad3, alt: "RAD plant machinery close-up with operator" },
+                                { src: rad4, alt: "RAD plant filtration and collection system" },
+                                { src: rad5, alt: "RAD plant cyclone system structure" },
+                                { src: rad6, alt: "RAD plant processing unit close-up" },
+                                { src: rad7, alt: "RAD plant outdoor equipment staging area" },
+                            ].map((img, idx) => (
+                                <figure
+                                    className="plant-item"
+                                    key={idx}
+                                    role="button"
+                                    tabIndex={0}
+                                    onClick={() => { setLightboxIndex(idx); setLightboxOpen(true); }}
+                                    onKeyDown={(e) => {
+                                        if (e.key === "Enter" || e.key === " ") {
+                                            e.preventDefault();
+                                            setLightboxIndex(idx);
+                                            setLightboxOpen(true);
+                                        }
+                                    }}
+                                >
+                                    <img src={img.src} alt={img.alt} loading="lazy" />
+                                </figure>
+                            ))}
+                        </div>
                     </div>
                 </div>
+                <div className="center-row">
+                    <Button to="/services" variant="ghost" size="sm">Coverage</Button>
+                    <Button to="/contact" variant="primary" size="md">Request pickup</Button>
+                </div>
             </Section>
+
 
             {/* TRUST */}
             <Section
@@ -331,10 +396,21 @@ export default function Home() {
                     </div>
                     <div className="cta-actions">
                         <Button to="/contact" variant="primary" size="lg">Request Pickup</Button>
-                        <Button to="/service-areas" variant="secondary" size="lg">Check Service Areas</Button>
+                        <Button href="tel:+14843691217" variant="secondary" size="sm" className="cta-btn">
+                            Call Now
+                        </Button>
                     </div>
                 </div>
             </section>
+            <Lightbox
+                open={lightboxOpen}
+                images={plantImages}
+                index={lightboxIndex}
+                onClose={() => setLightboxOpen(false)}
+                onPrev={() => setLightboxIndex((i) => (i - 1 + plantImages.length) % plantImages.length)}
+                onNext={() => setLightboxIndex((i) => (i + 1) % plantImages.length)}
+                title="RAD Recycling Plant gallery"
+            />
         </>
     );
 }
