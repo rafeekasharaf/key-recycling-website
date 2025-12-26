@@ -14,6 +14,7 @@ import WhyRecycle from "./pages/WhyRecycle";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
       <Footer />
       <ScrollToTopButton />
       <Analytics />
+      <SpeedInsights />
     </BrowserRouter>
   );
 }
