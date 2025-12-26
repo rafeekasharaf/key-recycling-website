@@ -71,10 +71,11 @@ export default function Header() {
                     <div className="nav-links">
                         <NavLink to="/" end onClick={close}>Home</NavLink>
                         <NavLink to="/why-recycle" onClick={close}>Why Recycle</NavLink>
+                        <NavLink to="/how-it-works" onClick={close}>How It Works</NavLink>
                         <NavLink to="/about" onClick={close}>About</NavLink>
                         <NavLink to="/services" onClick={close}>Services</NavLink>
 
-                        {/* <NavLink to="/how-it-works" onClick={close}>Process</NavLink> */}
+
 
                         <NavLink to="/contact" onClick={close}>Contact</NavLink>
                         {/* <NavLink to="/faq" onClick={close}>FAQ</NavLink> */}
