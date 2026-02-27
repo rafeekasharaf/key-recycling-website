@@ -57,7 +57,7 @@ export default function Footer() {
             <div className="footer-bottom">
                 <div className="container footer-bottom-inner">
                     <span>© {year} Key Recycling LLC. All rights reserved.</span>
-                    <span className="muted">Fast static React build • Optimized layout & UX</span>
+
                 </div>
             </div>
         </footer>
