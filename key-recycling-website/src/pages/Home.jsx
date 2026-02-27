@@ -85,7 +85,7 @@ export default function Home() {
                         </div>
 
                         <h1 className="h1 hero-title">
-                            Refrigerator & Freezer Recycling
+                            Responsible Appliance Recycling & Material Recovery
                             <span className="accent"> Done Right.</span>
                         </h1>
 
