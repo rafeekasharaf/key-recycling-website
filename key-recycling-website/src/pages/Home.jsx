@@ -103,13 +103,23 @@ export default function Home() {
 
                         <div className="hero-proof premium-proof">
                             <div className="proof proof--card">
-                                <div className="proof-num">24–48h</div>
-                                <div className="muted">Typical response window</div>
+                                <div className="proof-num">Commercial & Residential</div>
+                                <div className="muted">Scheduling built for both</div>
                             </div>
                             <div className="proof proof--card">
-                                <div className="proof-num">Safety</div>
-                                <div className="muted">Careful handling & transport</div>
+                                <div className="proof-num">Fast response</div>
+                                <div className="muted">Typical 24–48h window</div>
                             </div>
+                            <div className="proof proof--card">
+                                <div className="proof-num">Safety-first handling</div>
+                                <div className="muted">Careful pickup & transport</div>
+                            </div>
+
+                            <div className="proof proof--card">
+                                <div className="proof-num">Real facility operations</div>
+                                <div className="muted">Processing & recovery workflow</div>
+                            </div>
+
                             <div className="proof proof--card">
                                 <div className="proof-num">Eco</div>
                                 <div className="muted">Responsible recycling mindset</div>
@@ -124,6 +134,37 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* SERVICES (3-card grid) */}
+            <Section
+                tone="plain"
+                eyebrow="Services"
+                title="Recycling solutions built for real operations"
+                subtitle="Clear scheduling, careful handling, and responsible processing for homeowners and businesses."
+            >
+                <div className="grid-3 reveal" ref={useReveal()}>
+                    <IconCard
+                        icon=""
+                        title="Appliance Recycling"
+                        text="Refrigerators, freezers, and eligible commercial units handled with a safety-first workflow."
+                    />
+                    <IconCard
+                        icon=""
+                        title="Commercial Pickup"
+                        text="Bulk pickups and coordinated scheduling for stores, warehouses, and business locations."
+                    />
+                    <IconCard
+                        icon=""
+                        title="Material Recovery"
+                        text="Responsible processing and recovery practices designed to reduce waste and environmental impact."
+                    />
+                </div>
+
+                <div className="center-row mt-16">
+                    <Button to="/services" variant="secondary" size="md">View Services</Button>
+                    <Button to="/contact" variant="primary" size="md">Request Pickup</Button>
+                </div>
+            </Section>
 
             {/* WHAT WE RECYCLE */}
             <Section
@@ -213,7 +254,7 @@ export default function Home() {
                 tone="soft"
                 eyebrow="Why choose Key Recycling"
                 title="A better recycling experience"
-                subtitle="Modern communication, professional handling, and a process designed to protect the environment. We provides an effective way for consumers and utilities to responsibly recycle household appliances, resulting in improved energy conservation, lower utility bills, and a safer environment. Energy conservation in casinos is gaining importance as operators adopt eco-friendly technologies and efficient systems. Sustainable lighting, temperature controls, and smart appliances reduce environmental impact"
+                subtitle="Professional pickup coordination, safety-first handling, and responsible processing designed to protect the environment."
             >
                 <div className="reveal" ref={whyRef}>
                     <div className="grid-2">
@@ -310,7 +351,7 @@ export default function Home() {
                     {/* RAD PLANT GALLERY */}
                     <div className="plant-block">
                         <div className="plant-head">
-                            <h3 className="h2" style={{ margin: 0 }}>RAD Recycling Plant</h3>
+                            <h3 className="h2" style={{ margin: 0 }}>Inside Our Recycling Facility</h3>
                             <p className="plant-sub">
                                 A look inside the facility where appliances are processed with safety-first handling and responsible material recovery.
                                 These photos highlight real equipment and real operations behind our recycling workflow.
