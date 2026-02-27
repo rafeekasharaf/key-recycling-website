@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/footer.css";
 import Button from "./Button";
 
@@ -31,13 +32,13 @@ export default function Footer() {
 
                 <div className="footer-col">
                     <div className="footer-h">Pages</div>
-                    <a href="/">Home</a>
-                    <a href="/why-recycle">Why Recycle</a>
-                    <a href="/about">About</a>
-                    <a href="/services">Services</a>
-                    <a href="/how-it-works">How It Works</a>
+                    <Link to="/">Home</Link>
+                    <Link to="/why-recycle">Why Recycle</Link>
+                    <Link to="/about">About</Link>
+                    <Link to="/services">Services</Link>
+                    <Link to="/how-it-works">How It Works</Link>
 
-                    <a href="/contact">Contact</a>
+                    <Link to="/contact">Contact</Link>
                 </div>
 
                 <div className="footer-col">

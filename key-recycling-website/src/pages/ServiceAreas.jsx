@@ -1,6 +1,6 @@
 import Section from "../components/Section";
 import Button from "../components/Button";
-import areasImg from "../assets/images/areas-hero.png";
+import areasImg from "../assets/images/areas-hero.webp";
 
 export default function ServiceAreas() {
     const areas = [

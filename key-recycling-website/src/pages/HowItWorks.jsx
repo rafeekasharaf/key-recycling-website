@@ -3,15 +3,17 @@ import { useMemo, useState } from "react";
 import Lightbox from "../components/Lightbox";
 import Section from "../components/Section";
 import Button from "../components/Button";
-import processImg from "../assets/images/process-hero.png";
+import processImg from "../assets/images/process-hero.webp";
 
-import rad1 from "../assets/images/rad/rad-plant-1.jpg";
-import rad2 from "../assets/images/rad/rad-plant-2.jpg";
-import rad3 from "../assets/images/rad/rad-plant-3.jpg";
-import rad4 from "../assets/images/rad/rad-plant-4.jpg";
-import rad5 from "../assets/images/rad/rad-plant-5.jpg";
-import rad6 from "../assets/images/rad/rad-plant-6.jpg";
-import rad7 from "../assets/images/rad/rad-plant-7.jpg";
+import rad1 from "../assets/images/rad/rad-plant-1.webp";
+import rad2 from "../assets/images/rad/rad-plant-2.webp";
+import rad3 from "../assets/images/rad/rad-plant-3.webp";
+import rad4 from "../assets/images/rad/rad-plant-4.webp";
+import rad5 from "../assets/images/rad/rad-plant-5.webp";
+import rad6 from "../assets/images/rad/rad-plant-6.webp";
+import rad7 from "../assets/images/rad/rad-plant-7.webp";
+import rad8 from "../assets/images/rad/rad-plant-8.webp";
+import rad9 from "../assets/images/rad/rad-plant-9.webp";
 
 import mirogunDevice from "../assets/images/mirogun/mirogun-device.png";
 import mirogunCase from "../assets/images/mirogun/mirogun-case.png";
@@ -62,6 +64,8 @@ export default function HowItWorks() {
         { src: rad5, alt: "RAD plant cyclone system structure" },
         { src: rad6, alt: "RAD plant processing unit close-up" },
         { src: rad7, alt: "RAD plant outdoor equipment staging area" },
+        { src: rad8, alt: "RAD recycling plant compressor collection area" },
+        { src: rad9, alt: "RAD recycling plant e-waste processing area" },
     ]), []);
 
     return (
@@ -160,6 +164,8 @@ export default function HowItWorks() {
                                 { src: rad5, alt: "RAD plant cyclone system structure" },
                                 { src: rad6, alt: "RAD plant processing unit close-up" },
                                 { src: rad7, alt: "RAD plant outdoor equipment staging area" },
+                                { src: rad8, alt: "RAD recycling plant compressor collection area" },
+                                { src: rad9, alt: "RAD recycling plant e-waste processing area" },
                             ].map((img, idx) => (
                                 <figure
                                     className="plant-item"

@@ -39,6 +39,9 @@ export default function Lightbox({
     }, [open, onClose, onPrev, onNext]);
 
     const onPointerDown = (e) => {
+        // Ignore swipes when interacting with controls
+        if (e.target?.closest?.("button")) return;
+
         // only left click OR touch/pen
         if (e.pointerType === "mouse" && e.button !== 0) return;
         dragging.current = true;

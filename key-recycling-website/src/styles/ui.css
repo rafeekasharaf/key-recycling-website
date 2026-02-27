@@ -828,6 +828,13 @@
     transition: opacity .55s ease, transform .55s ease;
 }
 
+/* Mobile fix: avoid transform on hidden state (breaks lazy-load in some browsers) */
+@media (max-width: 640px) {
+    .reveal {
+        transform: none;
+    }
+}
+
 .is-revealed,
 .reveal.is-revealed {
     opacity: 1;
@@ -2098,7 +2105,7 @@
 }
 
 /* Mobile: swipeable row with snap (best UX) */
-@media (max-width: 640px) {
+/* @media (max-width: 640px) {
     .plant-gallery {
         display: grid;
         grid-auto-flow: column;
@@ -2117,7 +2124,32 @@
     .plant-item img {
         height: 210px;
     }
+} */
+
+@media (max-width: 640px) {
+    .plant-gallery {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 12px;
+
+        overflow: visible;
+        /* no horizontal scrolling */
+        padding-bottom: 0;
+        scroll-snap-type: none;
+    }
+
+    .plant-item {
+        scroll-snap-align: unset;
+    }
+
+    .plant-item img {
+        height: 205px;
+        /* adjust if you want bigger */
+    }
 }
+
+
+
 
 /* =========================
    Lightbox (no library)

@@ -493,24 +493,18 @@
     }
 }
 
-/* Mobile: swipeable row with snap (best UX) */
+/* Mobile: keep a clean 2-column grid so all photos are visible with normal vertical scrolling */
 @media (max-width: 640px) {
     .plant-gallery {
         display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: 85%;
-        overflow-x: auto;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
-        padding-bottom: 10px;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .plant-item {
-        scroll-snap-align: start;
+        overflow: visible;
+        padding-bottom: 0;
+        scroll-snap-type: none;
     }
 
     .plant-item img {
-        height: 210px;
+        height: 170px;
     }
 }
