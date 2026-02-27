@@ -343,7 +343,10 @@ export default function Home() {
                                         }
                                     }}
                                 >
-                                    <img src={img.src} alt={img.alt} loading="eager" decoding="async" />
+                                    <img src={img.src} alt={img.alt} loading="eager" decoding="async"
+                                        draggable="false"
+                                        onContextMenu={(e) => e.preventDefault()}
+                                        onDragStart={(e) => e.preventDefault()} />
                                 </figure>
                             ))}
                         </div>

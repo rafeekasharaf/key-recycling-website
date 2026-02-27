@@ -116,6 +116,8 @@ export default function Lightbox({
                         alt={current.alt || "Gallery image"}
                         className="lightbox-img"
                         draggable="false"
+                        onContextMenu={(e) => e.preventDefault()}
+                        onDragStart={(e) => e.preventDefault()}
                     />
                     {(current.caption || current.alt) && (
                         <figcaption className="lightbox-caption">

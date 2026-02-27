@@ -181,7 +181,11 @@ export default function HowItWorks() {
                                         }
                                     }}
                                 >
-                                    <img src={img.src} alt={img.alt} loading="lazy" />
+                                    <img src={img.src} alt={img.alt} loading="lazy"
+                                        draggable="false"
+                                        onContextMenu={(e) => e.preventDefault()}
+                                        onDragStart={(e) => e.preventDefault()}
+                                    />
                                 </figure>
                             ))}
                         </div>
