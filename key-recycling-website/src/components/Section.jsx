@@ -18,7 +18,7 @@ export default function Section({
                     {(eyebrow || title || subtitle) && (
                         <div className="section-head">
                             {eyebrow ? <div className="eyebrow">{eyebrow}</div> : null}
-                            {title ? <h2 className="h2">{title}</h2> : null}
+                            {title ? <h2 className="h1">{title}</h2> : null}
                             {subtitle ? <p className="lead">{subtitle}</p> : null}
                         </div>
                     )}
