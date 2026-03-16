@@ -38,8 +38,8 @@ export default function ServiceAreas() {
             <Section
                 tone="plain"
                 eyebrow="Coverage"
-                title="Local pickup coverage"
-                subtitle="Replace these with real coverage cities/counties from your client."
+                title="Pickup Coverage"
+                subtitle=""
             >
                 <div className="grid-2">
                     <div className="panel">
@@ -57,13 +57,13 @@ export default function ServiceAreas() {
 
                     <div className="panel">
                         <h3 className="h3">Map</h3>
-                        <p className="muted">
+                        {/* <p className="muted">
                             Replace this iframe with your Google Maps embed (business address or coverage area).
-                        </p>
+                        </p> */}
                         <div className="map">
                             <iframe
                                 title="Service Area Map"
-                                src="https://www.google.com/maps?q=United%20States&output=embed"
+                                src="https://www.google.com/maps?q=1800%20Route-13%20Bristol%20PA%2019007&output=embed"
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                             />
