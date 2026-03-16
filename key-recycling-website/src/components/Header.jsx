@@ -82,7 +82,7 @@ export default function Header() {
                     </div>
 
                     <div className="nav-cta">
-                        <Button to="/contact" variant="primary" size="lg" onClick={close}>
+                        <Button to="/contact" variant="primary" size="lg" onClick={close} style={{ color: "#fff !important" }}>
                             Request Pickup
                         </Button>
                         <Button href="tel:+14843691217" variant="secondary" size="sm" className="cta-btn">

@@ -120,7 +120,7 @@ export default function Contact() {
                             </div>
                             <div className="contact-row">
                                 <strong>Address</strong>
-                                <span>8400 US-13, Bristol, PA 19007</span>
+                                <span>1800 Route-13, Bristol, PA 19007</span>
                             </div>
                             <div className="contact-row">
                                 <strong>Service</strong>
@@ -132,7 +132,7 @@ export default function Contact() {
                         <div className="contact-map">
                             <iframe
                                 title="Key Recycling LLC Location"
-                                src="https://www.google.com/maps?q=8400%20US-13%20Bristol%20PA%2019007&output=embed"
+                                src="https://www.google.com/maps?q=1800%20Route-13%20Bristol%20PA%2019007&output=embed"
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
                             />
@@ -140,7 +140,7 @@ export default function Contact() {
 
                         <div style={{ marginTop: 14 }}>
                             <Button
-                                href="https://www.google.com/maps/dir/?api=1&destination=8400+US-13+Bristol+PA+19007"
+                                href="https://www.google.com/maps/dir/?api=1&destination=1800+Route-13+Bristol+PA+19007"
                                 variant="ghost"
                                 size="sm"
                             >
