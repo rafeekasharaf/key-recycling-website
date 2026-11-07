@@ -373,3 +373,81 @@
 .header--scrolled .header-top {
     opacity: .85;
 }
+/* =========================
+   Responsive QA fixes
+   ========================= */
+
+.nav a,
+.brand-title,
+.brand-sub {
+    white-space: nowrap;
+}
+
+/* `.nav a` colour was overriding the primary button's white label */
+.nav .btn--primary,
+.nav .btn--primary:hover {
+    color: #fff;
+}
+
+/* Small laptops: desktop nav was wrapping labels onto two lines */
+@media (min-width: 981px) and (max-width: 1200px) {
+    .header-main {
+        gap: 10px;
+    }
+
+    .brand {
+        min-width: 0;
+        gap: 10px;
+    }
+
+    .brand-logo,
+    .header--scrolled .brand-logo {
+        height: 64px;
+    }
+
+    .nav {
+        gap: 8px;
+    }
+
+    .nav-links {
+        gap: 2px;
+        padding: 6px;
+    }
+
+    .nav a,
+    .header--scrolled .nav a {
+        padding: 10px 10px;
+        font-size: 14px;
+    }
+
+    .nav-cta {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 980px) {
+    /* open menu sits directly under the header, whatever its height */
+    .nav {
+        top: calc(100% + 8px);
+    }
+
+    /* primary CTA in the menu kept losing its button styling to `.nav a` */
+    .nav .btn--primary {
+        background: linear-gradient(90deg, var(--green), var(--green2));
+        color: #fff;
+        border-color: transparent;
+        justify-content: center;
+    }
+
+    .nav a {
+        min-height: 44px;
+    }
+}
+
+/* Phones: top strip wrapped to 2-3 lines; keep only the first item */
+@media (max-width: 640px) {
+    .top-left .top-sep,
+    .top-left .top-text ~ .top-text {
+        display: none;
+    }
+}

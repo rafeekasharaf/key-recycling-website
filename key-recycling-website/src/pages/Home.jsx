@@ -4,6 +4,7 @@ import Lightbox from "../components/Lightbox";
 import Section from "../components/Section";
 import Button from "../components/Button";
 import IconCard from "../components/IconCard";
+import HomeownerNotice from "../components/HomeownerNotice";
 import heroImg from "../assets/images/home-hero.png";
 
 import rad1 from "../assets/images/rad/rad-plant-1.webp";
@@ -45,6 +46,7 @@ function useReveal() {
 
 export default function Home() {
     const heroRef = useReveal();
+    const servicesRef = useReveal();
     const recycleRef = useReveal();
     const whyRef = useReveal();
     const howRef = useReveal();
@@ -79,57 +81,56 @@ export default function Home() {
                 <div className="container page-hero-inner">
                     <div className="hero-copy">
                         <div className="hero-badges">
-                            <span className="pill pill--glass">Safe refrigerant handling</span>
-                            <span className="pill pill--glass">Residential & Commercial</span>
-                            <span className="pill pill--glass">Fast pickup scheduling</span>
+                            <span className="pill pill--glass">Utility program partner</span>
+                            <span className="pill pill--glass">400,000+ units / year</span>
+                            <span className="pill pill--glass">95%+ material recovery</span>
                         </div>
 
                         <h1 className="h1 hero-title">
-                            Responsible Appliance Recycling & Material Recovery
-                            <span className="accent"> Done Right.</span>
+                            Appliance Recycling Built for Utility Programs
+                            <span className="accent"> At Scale.</span>
                         </h1>
 
                         <p className="hero-lead">
-                            Key Recycling LLC helps homeowners and businesses recycle old refrigerators and freezers responsibly.
-                            We keep the process simple, communication clear, and handling professional — so you feel confident from
-                            request to pickup.
+                            Key Recycling LLC partners with utilities and program implementers to run refrigerator and freezer recycling
+                            programs end to end — collection from participating customers, compliance-focused processing, and the documentation
+                            programs need.
                         </p>
 
                         <div className="hero-actions">
-                            <Button to="/contact" variant="primary" size="lg">Request Pickup</Button>
-                            <Button to="/services" variant="secondary" size="lg">View Services</Button>
-                            <Button href="tel:+14843691217" variant="ghost" size="lg">Call Now</Button>
+                            <Button to="/contact" variant="primary" size="lg">Partner With Us</Button>
+                            <Button to="/services" variant="secondary" size="lg">Our Services</Button>
                         </div>
 
                         <div className="hero-proof premium-proof">
                             <div className="proof proof--card">
-                                <div className="proof-num">Commercial & Residential</div>
-                                <div className="muted">Scheduling built for both</div>
+                                <div className="proof-num">20+ years</div>
+                                <div className="muted">Serving utility programs</div>
                             </div>
                             <div className="proof proof--card">
-                                <div className="proof-num">Fast response</div>
-                                <div className="muted">Typical 24–48h window</div>
+                                <div className="proof-num">5 states</div>
+                                <div className="muted">Regional program coverage</div>
                             </div>
                             <div className="proof proof--card">
-                                <div className="proof-num">Safety-first handling</div>
-                                <div className="muted">Careful pickup & transport</div>
-                            </div>
-
-                            <div className="proof proof--card">
-                                <div className="proof-num">Real facility operations</div>
-                                <div className="muted">Processing & recovery workflow</div>
+                                <div className="proof-num">400,000+</div>
+                                <div className="muted">Units recycled each year</div>
                             </div>
 
                             <div className="proof proof--card">
-                                <div className="proof-num">Eco</div>
-                                <div className="muted">Responsible recycling mindset</div>
+                                <div className="proof-num">95%+</div>
+                                <div className="muted">Materials recovered or responsibly handled</div>
+                            </div>
+
+                            <div className="proof proof--card">
+                                <div className="proof-num">In-house plant</div>
+                                <div className="muted">Our own processing facility</div>
                             </div>
                         </div>
 
                         <div className="hero-mini">
-                            <span className="mini-item">✔ Clear scheduling</span>
-                            <span className="mini-item">✔ Professional pickup</span>
-                            <span className="mini-item">✔ Simple request form</span>
+                            <span className="mini-item">✔ Turnkey program delivery</span>
+                            <span className="mini-item">✔ Compliance-focused processing</span>
+                            <span className="mini-item">✔ Program reporting</span>
                         </div>
                     </div>
                 </div>
@@ -139,30 +140,30 @@ export default function Home() {
             <Section
                 tone="plain"
                 eyebrow="Services"
-                title="Recycling solutions built for real operations"
-                subtitle="Clear scheduling, careful handling, and responsible processing for homeowners and businesses."
+                title="Recycling solutions built for utility programs"
+                subtitle="Program collection, responsible processing, and reliable reporting — delivered as one service for utilities and implementers."
             >
-                <div className="grid-3 reveal" ref={useReveal()}>
+                <div className="grid-3 reveal" ref={servicesRef}>
                     <IconCard
                         icon=""
-                        title="Appliance Recycling"
-                        text="Refrigerators, freezers, and eligible commercial units handled with a safety-first workflow."
+                        title="Program Collection"
+                        text="In-home collection for enrolled program participants, carried out by our crews on the utility's behalf."
                     />
                     <IconCard
                         icon=""
-                        title="Commercial Pickup"
-                        text="Bulk pickups and coordinated scheduling for stores, warehouses, and business locations."
+                        title="Recycling & Processing"
+                        text="Units are deconstructed at our plant with refrigerant and foam blowing-agent recovery and responsible material recovery."
                     />
                     <IconCard
                         icon=""
-                        title="Material Recovery"
-                        text="Responsible processing and recovery practices designed to reduce waste and environmental impact."
+                        title="Program Reporting"
+                        text="Unit-level documentation to support program verification and savings reporting."
                     />
                 </div>
 
                 <div className="center-row mt-16">
-                    <Button to="/services" variant="secondary" size="md">View Services</Button>
-                    <Button to="/contact" variant="primary" size="md">Request Pickup</Button>
+                    <Button to="/services" variant="secondary" size="md">Our Services</Button>
+                    <Button to="/contact" variant="primary" size="md">Partner With Us</Button>
                 </div>
             </Section>
 
@@ -171,80 +172,60 @@ export default function Home() {
                 tone="plain"
                 eyebrow="What we recycle"
                 title="Focused on appliances that matter most"
-                subtitle="Refrigerators and freezers are our specialty — plus commercial units. A clean process built around trust."
+                subtitle="Refrigerators and freezers are our specialty — the units that drive program energy savings and require careful processing."
             >
                 <div className="recycle-wrap reveal" ref={recycleRef}>
                     <div className="recycle-grid">
                         <div className="recycle-card">
                             <div className="recycle-top">
-                                <span className="recycle-label">Residential</span>
+                                <span className="recycle-label">Program units</span>
                                 <span className="recycle-tag">Most common</span>
                             </div>
                             <h3 className="h3">Refrigerators</h3>
                             <p className="">
-                                Standard kitchen refrigerators, garage fridges, rental move-out units — we coordinate pickup and handle
-                                the unit carefully from start to finish.
+                                Older, inefficient refrigerators collected through utility programs — fully deconstructed at our plant so
+                                refrigerants, foam, and materials are handled responsibly.
                             </p>
                             <ul className="recycle-list">
-                                <li>Pickup request & quick confirmation</li>
-                                <li>Access notes (stairs, narrow doors)</li>
-                                <li>Safe handling and transport</li>
+                                <li>Refrigerant recovery</li>
+                                <li>Foam blowing-agent recovery</li>
+                                <li>Metals and plastics recovered for reuse</li>
                             </ul>
-                            <div className="recycle-actions">
-                                <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
-                                <Button to="/services" variant="ghost" size="sm">Coverage</Button>
-                            </div>
                         </div>
 
                         <div className="recycle-card">
                             <div className="recycle-top">
-                                <span className="recycle-label">Residential</span>
-                                <span className="recycle-tag">Heavy units</span>
+                                <span className="recycle-label">Program units</span>
+                                <span className="recycle-tag">Chest & upright</span>
                             </div>
                             <h3 className="h3">Freezers</h3>
                             <p className="">
-                                Upright and chest freezers can be heavy and awkward. We confirm access details up front and keep the pickup predictable.
+                                Chest and upright freezers processed through the same compliance-focused workflow, with each unit tracked
+                                for program records.
                             </p>
                             <ul className="recycle-list">
                                 <li>Chest and upright freezers</li>
-                                <li>Basement/garage pickup planning</li>
-                                <li>Clear request-to-schedule workflow</li>
+                                <li>Refrigerant and foam recovery</li>
+                                <li>Unit-level tracking for reporting</li>
                             </ul>
-                            <div className="recycle-actions">
-                                <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
-                                <Button to="/services" variant="ghost" size="sm">Coverage</Button>
-                            </div>
                         </div>
 
                         <div className="recycle-card">
                             <div className="recycle-top">
-                                <span className="recycle-label">Commercial</span>
-                                <span className="recycle-tag">Bulk pickup</span>
+                                <span className="recycle-label">Partners</span>
+                                <span className="recycle-tag">Bulk volume</span>
                             </div>
-                            <h3 className="h3">Commercial Units</h3>
+                            <h3 className="h3">Retail & Bulk Partners</h3>
                             <p className="">
-                                For businesses, timing and logistics matter. We support bulk pickups and align scheduling with docks and access windows.
+                                Appliances collected through retailer haul-away and bulk partners, processed at our plant to the same
+                                standards as program units.
                             </p>
                             <ul className="recycle-list">
-                                <li>Scheduling around site requirements</li>
-                                <li>Dock & access coordination</li>
-                                <li>Clear communication for teams</li>
+                                <li>Consistent processing standards</li>
+                                <li>High-volume plant capacity</li>
+                                <li>Documentation on request</li>
                             </ul>
-                            <div className="recycle-actions">
-                                <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
-                                <Button to="/services" variant="ghost" size="sm">Coverage</Button>
-                            </div>
                         </div>
-                    </div>
-
-                    <div className="recycle-note">
-                        <div>
-                            <div className="h3">Not sure if your unit qualifies?</div>
-                            <p className="mt-8">
-                                Submit a pickup request and we’ll confirm quickly. If it’s not eligible, we’ll tell you the best next option.
-                            </p>
-                        </div>
-                        <Button to="/contact" variant="secondary" size="md">Check my unit</Button>
                     </div>
                 </div>
             </Section>
@@ -253,41 +234,41 @@ export default function Home() {
             <Section
                 tone="soft"
                 eyebrow="Why choose Key Recycling"
-                title="A better recycling experience"
-                subtitle="Professional pickup coordination, safety-first handling, and responsible processing designed to protect the environment."
+                title="A recycling partner programs can rely on"
+                subtitle="Compliance-focused processing, dependable collection, and the documentation utility programs need."
             >
                 <div className="reveal" ref={whyRef}>
                     <div className="grid-2">
                         <div className="panel panel--premium">
-                            <h3 className="h3">Safety-first workflow</h3>
+                            <h3 className="h3">Compliance-first processing</h3>
                             <p className="">
-                                Appliances can contain refrigerants and components that should be handled responsibly. Our pickup and processing steps
-                                are designed around clean handling and minimizing environmental risk.
+                                Refrigerators and freezers contain refrigerants and foam blowing agents that must be recovered, not released.
+                                Every unit is processed at our own plant with recovery built into the workflow.
                             </p>
                             <ul className="list-check">
-                                <li>Careful pickup & transport</li>
-                                <li>Responsible processing mindset</li>
-                                <li>Material recovery where possible</li>
+                                <li>Refrigerant recovery from every unit</li>
+                                <li>Foam blowing-agent handling</li>
+                                <li>Documentation for each unit processed</li>
                             </ul>
                             <div className="panel-footer">
-                                <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
+                                <Button to="/contact" variant="primary" size="sm">Partner With Us</Button>
                                 <Button to="/why-recycle" variant="ghost" size="sm">Why recycle?</Button>
                             </div>
                         </div>
 
                         <div className="panel panel--premium">
-                            <h3 className="h3">Professional service</h3>
+                            <h3 className="h3">A reliable program partner</h3>
                             <p className="">
-                                We keep communication clear and scheduling simple. Whether you’re a homeowner or a business,
-                                we aim for quick responses and smooth pickup coordination.
+                                With 400,000+ units a year across 5 states, we have the scale and experience to keep programs running
+                                smoothly and participants satisfied.
                             </p>
                             <ul className="list-check">
-                                <li>Fast response to requests</li>
-                                <li>Residential & commercial scheduling</li>
-                                <li>Mobile-friendly customer experience</li>
+                                <li>Scale to support large programs</li>
+                                <li>On-time collection for participants</li>
+                                <li>Clear communication with program partners</li>
                             </ul>
                             <div className="panel-footer">
-                                <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
+                                <Button to="/contact" variant="primary" size="sm">Partner With Us</Button>
                                 <Button to="/why-recycle" variant="ghost" size="sm">Why recycle?</Button>
                             </div>
                         </div>
@@ -295,20 +276,20 @@ export default function Home() {
 
                     <div className="stats-row stats-row--premium">
                         <div className="stat">
-                            <div className="stat-big">Trusted</div>
-                            <div className="">Clear expectations & communication</div>
+                            <div className="stat-big">Proven</div>
+                            <div className="">20+ years serving utility programs</div>
                         </div>
                         <div className="stat">
-                            <div className="stat-big">Safe</div>
-                            <div className="">Careful handling at every step</div>
+                            <div className="stat-big">Compliant</div>
+                            <div className="">Refrigerant and foam recovery</div>
                         </div>
                         <div className="stat">
-                            <div className="stat-big">Efficient</div>
-                            <div className="">Simple request-to-schedule flow</div>
+                            <div className="stat-big">Scalable</div>
+                            <div className="">400,000+ units each year</div>
                         </div>
                         <div className="stat">
-                            <div className="stat-big">Eco</div>
-                            <div className="">Responsible recycling mindset</div>
+                            <div className="stat-big">Documented</div>
+                            <div className="">Reporting back to the program</div>
                         </div>
                     </div>
                 </div>
@@ -319,31 +300,31 @@ export default function Home() {
                 tone="gradient"
                 eyebrow="How it works"
                 title="Simple process. Clear steps."
-                subtitle="Three steps from request to recycling — designed to feel easy for customers."
+                subtitle="Three steps from program enrollment to recovered materials."
             >
                 <div className="reveal" ref={howRef}>
                     <div className="timeline-steps timeline-steps--premium">
                         <div className="step step--card">
                             <div className="step-num">1</div>
                             <div>
-                                <div className="step-title">Request pickup</div>
-                                <div className="">Tell us what you have, where it is, and your preferred pickup window.</div>
+                                <div className="step-title">Customer enrolls with the utility</div>
+                                <div className="">The program enrolls the participant and sends us the order.</div>
                             </div>
                         </div>
 
                         <div className="step step--card">
                             <div className="step-num">2</div>
                             <div>
-                                <div className="step-title">Confirm & schedule</div>
-                                <div className="">We confirm access details and schedule a time that works for you.</div>
+                                <div className="step-title">We collect</div>
+                                <div className="">Our crews collect the unit and confirm it in program records.</div>
                             </div>
                         </div>
 
                         <div className="step step--card">
                             <div className="step-num">3</div>
                             <div>
-                                <div className="step-title">Recycle responsibly</div>
-                                <div className="">Units are handled and processed with safety and environmental responsibility in mind.</div>
+                                <div className="step-title">We recycle & report</div>
+                                <div className="">The unit is processed at our plant with materials recovery and reporting back to the program.</div>
                             </div>
                         </div>
                     </div>
@@ -394,8 +375,8 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="center-row">
-                    <Button to="/services" variant="ghost" size="sm">Coverage</Button>
-                    <Button to="/contact" variant="primary" size="md">Request pickup</Button>
+                    <Button to="/how-it-works" variant="ghost" size="sm">Our Process</Button>
+                    <Button to="/contact" variant="primary" size="md">Partner With Us</Button>
                 </div>
             </Section>
 
@@ -405,51 +386,52 @@ export default function Home() {
                 tone="plain"
                 eyebrow="Built for trust"
                 title="Clear answers. Clear expectations."
-                subtitle="The details that help customers feel confident — before they submit a pickup request."
+                subtitle="What program administrators and implementers can count on when Key Recycling supports their appliance recycling program."
             >
                 <div className="reveal" ref={trustRef}>
                     <div className="grid-3">
                         <IconCard
                             icon=""
-                            title="Clear communication"
-                            text="We respond quickly, confirm details, and keep scheduling simple — no confusing steps."
+                            title="Partner communication"
+                            text="A responsive team that keeps program staff informed on collection status, volumes, and issues as they arise."
                         />
                         <IconCard
                             icon=""
-                            title="Responsible handling"
-                            text="Appliance recycling involves materials that must be handled carefully. Our workflow prioritizes safety."
+                            title="Responsible processing"
+                            text="Refrigerants and foam blowing agents are recovered, and 95%+ of each unit is recycled or responsibly handled."
                         />
                         <IconCard
                             icon=""
-                            title="Environmental awareness"
-                            text="Recycling reduces waste and recovers materials — when it’s done responsibly and consistently."
+                            title="Program-ready records"
+                            text="Unit-level documentation that supports program verification, evaluation, and savings reporting."
                         />
                     </div>
 
                     <div className="trust-band">
                         <div>
-                            <div className="h3">Want the fastest way to schedule?</div>
-                            <p className="">Use the Request Pickup form — we’ll respond quickly with next steps.</p>
+                            <div className="h3">Running or launching an appliance recycling program?</div>
+                            <p className="">Tell us about your territory and volume — we’ll follow up to discuss.</p>
                         </div>
-                        <Button to="/contact" variant="primary" size="md">Request Pickup</Button>
+                        <Button to="/contact" variant="primary" size="md">Partner With Us</Button>
                     </div>
                 </div>
             </Section>
+
+            <div className="container" style={{ paddingBottom: 28 }}>
+                <HomeownerNotice />
+            </div>
 
             {/* CTA */}
             <section className="cta-band">
                 <div className="container cta-band-inner">
                     <div>
-                        <h2 className="h2">Ready to recycle your old fridge or freezer?</h2>
+                        <h2 className="h2">Looking for an appliance recycling partner for your program?</h2>
                         <p className="lead">
-                            Submit your pickup request in under a minute. We’ll respond quickly to confirm scheduling and next steps.
+                            Tell us about your program, territory, and volume — we’ll follow up to discuss how we can help.
                         </p>
                     </div>
                     <div className="cta-actions">
-                        <Button to="/contact" variant="primary" size="lg">Request Pickup</Button>
-                        <Button href="tel:+14843691217" variant="secondary" size="sm" className="cta-btn">
-                            Call Now
-                        </Button>
+                        <Button to="/contact" variant="primary" size="lg">Partner With Us</Button>
                     </div>
                 </div>
             </section>
@@ -465,4 +447,3 @@ export default function Home() {
         </>
     );
 }
-

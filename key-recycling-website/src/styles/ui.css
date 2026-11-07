@@ -455,13 +455,20 @@
 }
 
 .field input,
-.field select {
+.field select,
+.field textarea {
     width: 100%;
     padding: 12px 12px;
     border-radius: 14px;
     border: 1px solid rgba(15, 23, 42, .14);
     background: #fff;
     outline: none;
+}
+
+.field textarea {
+    min-height: 110px;
+    resize: vertical;
+    font: inherit;
 }
 
 .form-actions {
@@ -2604,4 +2611,141 @@
 .mirogun-readmore-arrow {
     font-size: 14px;
     opacity: .85;
+}
+/* =========================
+   Responsive QA fixes
+   (kept last so they win over the duplicated blocks above)
+   ========================= */
+
+/* Buttons never wrap mid-label; their rows wrap instead */
+.btn {
+    white-space: nowrap;
+    font-family: inherit;
+    line-height: 1.2;
+}
+
+.panel-footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hero-actions,
+.cta-actions,
+.center-row,
+.panel-footer,
+.service-actions,
+.recycle-actions,
+.energy-actions,
+.money-actions,
+.planet-actions,
+.form-actions,
+.footer-actions {
+    flex-wrap: wrap;
+}
+
+@media (max-width: 980px) {
+    .btn {
+        min-height: 44px;
+    }
+
+    .cta-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 520px) {
+    .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+}
+
+/* Long unbroken strings (email) must not push layouts sideways */
+a[href^="mailto:"],
+.contact-row span {
+    overflow-wrap: anywhere;
+}
+
+.contact-row span {
+    min-width: 0;
+    text-align: right;
+}
+
+@media (max-width: 420px) {
+    .contact-row {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .contact-row span {
+        text-align: left;
+    }
+}
+
+/* Headings: avoid orphan words */
+h1,
+h2,
+.h1,
+.h2 {
+    text-wrap: balance;
+}
+
+/* Tighter section rhythm on phones */
+@media (max-width: 640px) {
+    .section {
+        padding: 56px 0;
+    }
+
+    .cta-band {
+        padding: 48px 0;
+    }
+}
+
+/* Form controls: same font/height everywhere, 16px to stop iOS zoom */
+.field input,
+.field select,
+.field textarea {
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--text);
+}
+
+.field input,
+.field select {
+    min-height: 48px;
+}
+
+/* Why Recycle subnav: pills keep their shape and scroll instead of wrapping */
+.sticky-subnav {
+    top: var(--header-h, 118px);
+}
+
+.sticky-subnav-inner > * {
+    flex-shrink: 0;
+}
+
+.subnav-link {
+    white-space: nowrap;
+}
+
+@media (max-width: 980px) {
+    .subnav-link {
+        min-height: 44px;
+    }
+}
+
+#energy,
+#money,
+#planet,
+#find-program {
+    scroll-margin-top: calc(var(--header-h, 118px) + 72px);
+}
+
+/* Lightbox: CSS watermark collides with the caption on phones (canvas has its own) */
+@media (max-width: 640px) {
+    .lightbox-figure::after {
+        bottom: auto;
+        top: 12px;
+    }
 }

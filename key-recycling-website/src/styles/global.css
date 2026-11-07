@@ -10,7 +10,9 @@
      --bg: #f6f8fb;
      --surface: #ffffff;
      --text: #0f172a;
-     --muted: #ced3d9;
+     /* body-copy grey for light surfaces (7:1 on white); light grey kept for dark surfaces */
+     --muted: #475569;
+     --muted-on-dark: #ced3d9;
      --line: rgba(15, 23, 42, .10);
      --shadow: 0 16px 42px rgba(2, 6, 23, .10);
 
@@ -57,6 +59,11 @@
 
  .muted {
      color: var(--muted);
+ }
+
+ .footer .muted,
+ .page-hero .muted {
+     color: var(--muted-on-dark);
  }
 
  h1,

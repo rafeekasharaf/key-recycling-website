@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/footer.css";
 import Button from "./Button";
+import HomeownerNotice from "./HomeownerNotice";
 
 export default function Footer() {
     const year = new Date().getFullYear();
@@ -13,20 +14,18 @@ export default function Footer() {
                         <div className="footer-badge">♻</div>
                         <div>
                             <div className="footer-title">Key Recycling LLC</div>
-                            <div className="muted">Responsible refrigerator & freezer recycling</div>
+                            <div className="muted">Appliance recycling partner to utility energy-efficiency programs</div>
                         </div>
                     </div>
 
                     <p className="muted footer-text">
-                        We provide safe, professional appliance recycling with a simple pickup experience.
-                        Our process prioritizes responsible handling and material recovery—built for clarity, trust, and speed.
+                        We help utilities and program implementers deliver turnkey refrigerator and freezer recycling programs —
+                        from in-home collection for program participants to responsible processing at our own plant and reliable
+                        reporting back to the program.
                     </p>
 
                     <div className="footer-actions">
-                        <Button to="/contact" variant="primary" size="sm">Request Pickup</Button>
-                        <Button href="tel:+14843691217" variant="secondary" size="sm" className="cta-btn">
-                            Call Now
-                        </Button>
+                        <Button to="/contact" variant="primary" size="sm">Partner With Us</Button>
                     </div>
                 </div>
 
@@ -42,16 +41,20 @@ export default function Footer() {
                 </div>
 
                 <div className="footer-col">
-                    <div className="footer-h">Contact</div>
+                    <div className="footer-h">Utility & Program Inquiries</div>
                     <div className="muted">Email</div>
                     <a href="mailto:KeyRecyclingLLC@Gmail.com">KeyRecyclingLLC@Gmail.com</a>
 
                     <div className="muted" style={{ marginTop: 10 }}>Phone</div>
-                    <a href="tel:+14843691217">+1 (484) 369-1217</a>
+                    <div>+1 (484) 369-1217</div>
 
                     <div className="muted" style={{ marginTop: 10 }}>Address</div>
                     <div>1800 Route-13, Bristol, PA 19007</div>
                 </div>
+            </div>
+
+            <div className="container" style={{ paddingBottom: 18 }}>
+                <HomeownerNotice compact />
             </div>
 
             <div className="footer-bottom">

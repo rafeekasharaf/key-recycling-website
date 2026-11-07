@@ -1,4 +1,11 @@
 {
+    "redirects": [
+        {
+            "source": "/service-areas",
+            "destination": "/services",
+            "permanent": true
+        }
+    ],
     "rewrites": [
         {
             "source": "/(.*)",

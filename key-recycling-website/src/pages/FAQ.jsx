@@ -1,5 +1,6 @@
 import Section from "../components/Section";
 import Button from "../components/Button";
+import { HOMEOWNER_NOTICE_TEXT } from "../components/HomeownerNotice";
 
 function FAQItem({ q, a }) {
     return (
@@ -13,20 +14,24 @@ function FAQItem({ q, a }) {
 export default function FAQ() {
     const items = [
         {
-            q: "What appliances do you accept?",
-            a: "We focus on refrigerators and freezers, including many commercial units. Submit a request with details and we’ll confirm.",
+            q: "What appliances do you process?",
+            a: "We specialize in refrigerators and freezers collected through utility appliance recycling programs, and also process units from retail and bulk partners.",
         },
         {
-            q: "Do you offer pickup?",
-            a: "Yes. Pickup availability depends on your location and scheduling. Use the request form for the fastest response.",
+            q: "What states and territories do you serve?",
+            a: "We currently support utility programs in 5 states. Contact us with your service territory and we’ll discuss coverage.",
         },
         {
-            q: "Why is refrigerator recycling important?",
-            a: "Refrigerators may contain refrigerants and materials that should be handled responsibly. Proper recycling helps reduce environmental impact and recovers reusable materials.",
+            q: "How is collection scheduled?",
+            a: "Scheduling is handled through the program. Participants enroll with their utility, the program sends us the order, and our crews collect the unit.",
         },
         {
-            q: "How quickly do you respond?",
-            a: "Typically within 24–48 hours. For urgent requests, call directly.",
+            q: "What reporting do you provide?",
+            a: "We provide unit-level records from collection through processing to support program verification and savings reporting.",
+        },
+        {
+            q: "Can I schedule a pickup directly as a homeowner?",
+            a: HOMEOWNER_NOTICE_TEXT,
         },
     ];
 
@@ -36,7 +41,7 @@ export default function FAQ() {
                 tone="plain"
                 eyebrow="FAQ"
                 title="Common questions"
-                subtitle="Clear answers help customers feel confident before they request pickup."
+                subtitle="Answers for utilities, program administrators, and implementers."
             >
                 <div className="panel">
                     {items.map((x) => (
@@ -44,8 +49,7 @@ export default function FAQ() {
                     ))}
 
                     <div className="center-row" style={{ marginTop: 16 }}>
-                        <Button to="/contact" variant="primary" size="md">Request Pickup</Button>
-                        <Button to="/services" variant="secondary" size="md">Services</Button>
+                        <Button to="/contact" variant="primary" size="md">Partner With Us</Button>
                     </div>
                 </div>
             </Section>

@@ -8,7 +8,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import HowItWorks from "./pages/HowItWorks";
-import ServiceAreas from "./pages/ServiceAreas";
 import Contact from "./pages/Contact";
 import WhyRecycle from "./pages/WhyRecycle";
 import FAQ from "./pages/FAQ";
@@ -28,7 +27,6 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
-          <Route path="/service-areas" element={<ServiceAreas />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/why-recycle" element={<WhyRecycle />} />
           <Route path="/faq" element={<FAQ />} />

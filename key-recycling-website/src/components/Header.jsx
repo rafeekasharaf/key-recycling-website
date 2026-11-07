@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import "../styles/header.css";
 import brandLogo from "../assets/images/brand-logo.png";
@@ -7,6 +7,19 @@ import brandLogo from "../assets/images/brand-logo.png";
 export default function Header() {
     const [open, setOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const headerRef = useRef(null);
+
+    // Expose the live header height so sticky elements/anchors can sit below it.
+    useEffect(() => {
+        const el = headerRef.current;
+        if (!el) return;
+        const update = () =>
+            document.documentElement.style.setProperty("--header-h", `${el.offsetHeight}px`);
+        update();
+        const ro = new ResizeObserver(update);
+        ro.observe(el);
+        return () => ro.disconnect();
+    }, []);
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 10);
@@ -25,20 +38,19 @@ export default function Header() {
     const close = () => setOpen(false);
 
     return (
-        <header className={`header ${scrolled ? "header--scrolled" : ""}`}>
+        <header ref={headerRef} className={`header ${scrolled ? "header--scrolled" : ""}`}>
             <div className="header-top">
                 <div className="container header-top-inner">
                     <div className="top-left">
                         <span className="top-dot" />
-                        <span className="top-text">Refrigerator & Freezer Recycling</span>
+                        <span className="top-text">Utility Appliance Recycling Programs</span>
                         <span className="top-sep">•</span>
-                        <span className="top-text">Safe Refrigerant Handling</span>
+                        <span className="top-text">Refrigerant & Foam Recovery</span>
                         <span className="top-sep">•</span>
-                        <span className="top-text">Pickup Available</span>
+                        <span className="top-text">400,000+ Units / Year</span>
                     </div>
                     <span className="top-actions">
                         <a href="mailto:KeyRecyclingLLC@Gmail.com">KeyRecyclingLLC@Gmail.com</a>
-                        <a href="tel:+14843691217">+1 (484) 369-1217</a>
                     </span>
                 </div>
             </div>
@@ -52,7 +64,7 @@ export default function Header() {
                     />
                     <div className="brand-text">
                         <div className="brand-title">Key Recycling LLC</div>
-                        <div className="brand-sub">Appliance Recycling Specialists</div>
+                        <div className="brand-sub">Utility Program Recycling Partner</div>
                     </div>
                 </Link>
 
@@ -82,11 +94,8 @@ export default function Header() {
                     </div>
 
                     <div className="nav-cta">
-                        <Button to="/contact" variant="primary" size="lg" onClick={close} style={{ color: "#fff !important" }}>
-                            Request Pickup
-                        </Button>
-                        <Button href="tel:+14843691217" variant="secondary" size="sm" className="cta-btn">
-                            Call Now
+                        <Button to="/contact" variant="primary" size="lg" onClick={close}>
+                            Partner With Us
                         </Button>
                     </div>
                 </nav>

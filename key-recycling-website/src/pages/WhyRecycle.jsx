@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Section from "../components/Section";
 import Button from "../components/Button";
+import HomeownerNotice from "../components/HomeownerNotice";
 import whyImg from "../assets/images/home-hero.png";
 import powerImg from "../assets/images/why-energy-power.png";
 import actionImg from "../assets/images/why-energy-action.jpg";
@@ -36,8 +37,9 @@ export default function WhyRecycle() {
         const el = document.getElementById(id);
         if (!el) return;
 
-        // offset for sticky header + sticky subnav
-        const offset = window.innerWidth <= 980 ? 190 : 180;
+        // offset for sticky header + sticky subnav (measured, since header height varies by width)
+        const sub = document.querySelector(".sticky-subnav");
+        const offset = sub ? parseFloat(getComputedStyle(sub).top) + sub.offsetHeight + 16 : 180;
         const y = el.getBoundingClientRect().top + window.scrollY - offset;
 
         window.scrollTo({ top: y, behavior: "smooth" });
@@ -72,8 +74,8 @@ export default function WhyRecycle() {
                         </p>
 
                         <div className="hero-actions">
-                            <Button to="/contact" variant="primary" size="lg">
-                                Request Pickup
+                            <Button href="#find-program" onClick={goTo("find-program")} variant="primary" size="lg">
+                                Find your utility’s program
                             </Button>
 
                         </div>
@@ -110,8 +112,8 @@ export default function WhyRecycle() {
 
                     <div className="subnav-spacer" />
 
-                    <Button to="/contact" variant="primary" size="sm">
-                        Request Pickup
+                    <Button href="#find-program" onClick={goTo("find-program")} variant="primary" size="sm">
+                        Find your utility’s program
                     </Button>
                 </div>
             </div>
@@ -120,7 +122,7 @@ export default function WhyRecycle() {
             <Section
                 tone="plain"
                 eyebrow="Big picture"
-                title="Three reasons customers recycle"
+                title="Three reasons to recycle old appliances"
                 subtitle="A simple, easy-to-understand breakdown of the benefits."
             >
                 <div className="recycle-grid">
@@ -298,8 +300,7 @@ export default function WhyRecycle() {
                                     </ul>
 
                                     <div className="energy-actions">
-                                        <Button to="/contact" variant="primary" size="sm">Request Pickup</Button>
-
+                                        <Button to="/how-it-works" variant="secondary" size="sm">Our Process</Button>
                                     </div>
                                 </div>
                             </div>
@@ -418,8 +419,8 @@ export default function WhyRecycle() {
                                     <div className="money-step">
                                         <div className="money-step-num">3</div>
                                         <div>
-                                            <div className="money-step-title">Ask about rebates (if available)</div>
-                                            <div className="">Some utility programs offer incentives for recycling older appliances. </div>
+                                            <div className="money-step-title">Check your utility’s program</div>
+                                            <div className="">Check your utility’s appliance recycling program — many include free pickup and a rebate.</div>
                                         </div>
                                     </div>
                                 </div>
@@ -428,14 +429,13 @@ export default function WhyRecycle() {
                                     <div>
                                         <div className="money-tip-title">Make it effortless</div>
                                         <div className="">
-                                            Our pickup request flow is designed to be simple: request pickup, confirm access details, and we handle the rest.
-                                            Pickup helps you avoid hauling and disposal hassle.
+                                            Most electric utilities run appliance recycling programs that pick up old refrigerators and freezers for free —
+                                            often with a cash rebate. Contact your utility or visit its website to enroll.
                                         </div>
                                     </div>
 
                                     <div className="money-actions">
-                                        <Button to="/contact" variant="primary" size="sm">Request Pickup</Button>
-                                        <Button to="/services" variant="ghost" size="sm">View Services</Button>
+                                        <Button href="#find-program" onClick={goTo("find-program")} variant="primary" size="sm">Find your utility’s program</Button>
                                     </div>
                                 </div>
                             </div>
@@ -542,8 +542,8 @@ export default function WhyRecycle() {
                                 <div>
                                     <h3 className="h3">Reduce your carbon footprint in a big way</h3>
                                     <p className="" style={{ marginTop: 10 }}>
-                                        The referenced material states that recycling one refrigerator or freezer can prevent <strong>up to 10 tons of CO₂/CO₂e</strong>
-                                        from entering the atmosphere — described as equivalent to taking <strong>two cars</strong> off the road for one year.
+                                        Recycling one refrigerator or freezer can prevent <strong>up to 10 tons of CO₂/CO₂e</strong> from entering the
+                                        atmosphere — equivalent to taking <strong>two cars</strong> off the road for one year.
                                     </p>
                                 </div>
 
@@ -552,7 +552,7 @@ export default function WhyRecycle() {
 
                             <div className="planet-impact">
                                 <div className="planet-impact-big">Up to 10 tons</div>
-                                <div className="planet-impact-sub">CO₂ / CO₂e avoided (per referenced claim). </div>
+                                <div className="planet-impact-sub">CO₂ / CO₂e avoided per unit recycled.</div>
                             </div>
 
                             <div className="planet-media planet-media--wide">
@@ -570,7 +570,6 @@ export default function WhyRecycle() {
 
                                 <div className="planet-actions">
                                     <Button to="/how-it-works" variant="secondary" size="sm">See our recycling process</Button>
-                                    <Button to="/contact" variant="primary" size="sm">Request Pickup</Button>
                                 </div>
                             </div>
                         </div>
@@ -580,21 +579,39 @@ export default function WhyRecycle() {
             </Section>
 
 
+            {/* FIND YOUR PROGRAM */}
+            <Section
+                id="find-program"
+                tone="plain"
+                eyebrow="Recycle an appliance"
+                title="Find your utility’s program"
+            >
+                <HomeownerNotice />
+
+                <div className="trust-band">
+                    <div>
+                        <div className="h3">Are you a utility or program implementer?</div>
+                        <p className="">Learn how Key Recycling can support your appliance recycling program.</p>
+                    </div>
+                    <Button to="/contact" variant="primary" size="md">Partner With Us</Button>
+                </div>
+            </Section>
+
             {/* CTA */}
             <section className="cta-band">
                 <div className="container cta-band-inner">
                     <div>
                         <h2 className="h2">Ready to recycle responsibly?</h2>
                         <p className="lead">
-                            Send your pickup request and we’ll confirm details quickly — simple scheduling and professional handling.
+                            Your electric utility’s appliance recycling program is the easiest way to recycle an old refrigerator or freezer.
                         </p>
                     </div>
                     <div className="cta-actions">
-                        <Button to="/contact" variant="primary" size="lg">
-                            Request Pickup
+                        <Button href="#find-program" onClick={goTo("find-program")} variant="primary" size="lg">
+                            Find your utility’s program
                         </Button>
                         <Button to="/services" variant="secondary" size="lg">
-                            View Services
+                            Our Services
                         </Button>
                     </div>
                 </div>

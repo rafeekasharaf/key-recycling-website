@@ -3,14 +3,6 @@ import Button from "../components/Button";
 import servicesImg from "../assets/images/services-hero.jpg";
 
 export default function Services() {
-    const areas = [
-        "City / Town 1",
-        "City / Town 2",
-        "City / Town 3",
-        "County / Region",
-        "Neighboring Areas",
-        "Commercial Zones",
-    ];
     return (
         <>
             <section className="page-hero page-hero--short">
@@ -24,11 +16,11 @@ export default function Services() {
                     <div className="hero-copy">
                         <h1 className="h1">Services</h1>
                         <p className="hero-lead">
-                            Refrigerator and freezer recycling for homes and businesses — with a clean, modern, trust-focused experience.
+                            End-to-end appliance recycling services for utility energy-efficiency programs and their implementers.
                         </p>
                         <div className="hero-actions">
-                            <Button to="/contact" variant="primary" size="lg">Request Pickup</Button>
-                            <Button to="/how-it-works" variant="secondary" size="lg">How It Works</Button>
+                            <Button to="/contact" variant="primary" size="lg">Partner With Us</Button>
+                            <Button to="/how-it-works" variant="secondary" size="lg">Our Process</Button>
                         </div>
                     </div>
                 </div>
@@ -38,61 +30,62 @@ export default function Services() {
                 tone="plain"
                 eyebrow="Core services"
                 title="What we offer"
-                subtitle="Service descriptions written to build trust and answer customer questions."
+                subtitle="Everything a utility appliance recycling program needs — collection, processing, and reporting — from one partner."
             >
                 <div className="grid-2">
                     {/* Card 1 */}
                     <div className="service-card service-card--clean">
                         <div className="service-top">
-                            <span className="service-chip">Residential</span>
-                            <span className="service-chip service-chip--alt">Most Popular</span>
+                            <span className="service-chip">Utility Programs</span>
+                            <span className="service-chip service-chip--alt">Collection</span>
                         </div>
 
-                        <h3 className="h3 service-title">Refrigerator Recycling</h3>
+                        <h3 className="h3 service-title">Program Collection Services</h3>
                         <p className="service-summary">
-                            Hassle-free refrigerator pickup and responsible recycling — designed for homeowners, property managers, and rentals.
+                            In-home collection for utility program participants, carried out by our own trained crews on the program’s behalf.
                         </p>
 
                         <div className="service-bestfor">
-                            <strong>Best for:</strong> old kitchen fridges, garage fridges, rental move-outs
+                            <strong>Best for:</strong> utility appliance recycling programs and their implementers
                         </div>
 
                         <div className="service-features">
-                            <div className="service-feature">Pickup scheduling & confirmation</div>
-                            <div className="service-feature">Careful handling & transport</div>
-                            <div className="service-feature">Responsibility-minded recycling</div>
+                            <div className="service-feature">Professional collection crews</div>
+                            <div className="service-feature">Scheduling handled through the program</div>
+                            <div className="service-feature">Unit verification at collection</div>
                         </div>
 
                         <div className="service-actions">
-                            <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
-                            <Button to="/why-recycle" variant="ghost" size="sm">Why recycle?</Button>
+                            <Button to="/contact" variant="primary" size="sm">Partner With Us</Button>
+                            <Button to="/how-it-works" variant="ghost" size="sm">Our Process</Button>
                         </div>
                     </div>
 
                     {/* Card 2 */}
                     <div className="service-card service-card--clean">
                         <div className="service-top">
-                            <span className="service-chip">Residential</span>
-                            <span className="service-chip service-chip--alt">Heavy Units</span>
+                            <span className="service-chip">Processing</span>
+                            <span className="service-chip service-chip--alt">95%+ Recovery</span>
                         </div>
 
-                        <h3 className="h3 service-title">Freezer Recycling</h3>
+                        <h3 className="h3 service-title">Recycling & Material Recovery</h3>
                         <p className="service-summary">
-                            Freezers can be heavy and awkward. We confirm access details up front and keep pickup smooth and predictable.
+                            Every unit is fully deconstructed at our own plant, with over 95% of components and materials recycled or
+                            responsibly handled.
                         </p>
 
                         <div className="service-bestfor">
-                            <strong>Best for:</strong> chest freezers, upright freezers, basement/garage units
+                            <strong>Best for:</strong> programs that require documented, compliance-focused processing
                         </div>
 
                         <div className="service-features">
-                            <div className="service-feature">Access planning (stairs, doors, gates)</div>
-                            <div className="service-feature">Safe pickup workflow</div>
-                            <div className="service-feature">Clear request-to-schedule process</div>
+                            <div className="service-feature">Refrigerant recovery</div>
+                            <div className="service-feature">Foam blowing-agent recovery</div>
+                            <div className="service-feature">Full deconstruction & material recovery</div>
                         </div>
 
                         <div className="service-actions">
-                            <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
+                            <Button to="/contact" variant="primary" size="sm">Partner With Us</Button>
                             <Button to="/why-recycle" variant="ghost" size="sm">Why recycle?</Button>
                         </div>
                     </div>
@@ -100,27 +93,27 @@ export default function Services() {
                     {/* Card 3 */}
                     <div className="service-card service-card--clean">
                         <div className="service-top">
-                            <span className="service-chip">Commercial</span>
-                            <span className="service-chip service-chip--alt">Bulk Pickup</span>
+                            <span className="service-chip">Reporting</span>
+                            <span className="service-chip service-chip--alt">Program Data</span>
                         </div>
 
-                        <h3 className="h3 service-title">Commercial Appliance Recycling</h3>
+                        <h3 className="h3 service-title">Program Data & Reporting</h3>
                         <p className="service-summary">
-                            Bulk pickup and logistics coordination for businesses — aligned with dock access, time windows, and site requirements.
+                            Unit-level records from collection through processing to support program verification and savings reporting.
                         </p>
 
                         <div className="service-bestfor">
-                            <strong>Best for:</strong> restaurants, retail, apartments, facilities & maintenance teams
+                            <strong>Best for:</strong> program administrators, implementers, and evaluation teams
                         </div>
 
                         <div className="service-features">
-                            <div className="service-feature">Bulk pickup planning</div>
-                            <div className="service-feature">Dock/access coordination</div>
-                            <div className="service-feature">Clear scheduling communication</div>
+                            <div className="service-feature">Unit-level collection records</div>
+                            <div className="service-feature">Processing documentation</div>
+                            <div className="service-feature">Records delivered back to the program</div>
                         </div>
 
                         <div className="service-actions">
-                            <Button to="/contact" variant="primary" size="sm">Talk to us</Button>
+                            <Button to="/contact" variant="primary" size="sm">Partner With Us</Button>
                             <Button to="/about" variant="ghost" size="sm">About</Button>
                         </div>
                     </div>
@@ -129,26 +122,26 @@ export default function Services() {
                     <div className="service-card service-card--clean">
                         <div className="service-top">
                             <span className="service-chip">Partners</span>
-                            <span className="service-chip service-chip--alt">Programs</span>
+                            <span className="service-chip service-chip--alt">Bulk Volume</span>
                         </div>
 
-                        <h3 className="h3 service-title">Program / Partner Support</h3>
+                        <h3 className="h3 service-title">Retail & Bulk Partners</h3>
                         <p className="service-summary">
-                            If your organization runs a recycling program, we can align workflows for consistency, coordination, and smooth customer handling.
+                            Processing for appliances collected by retail and bulk partners, held to the same standards as our program units.
                         </p>
 
                         <div className="service-bestfor">
-                            <strong>Best for:</strong> utility programs, community initiatives, partner collections
+                            <strong>Best for:</strong> retailers and organizations with bulk appliance volume
                         </div>
 
                         <div className="service-features">
-                            <div className="service-feature">Partner-friendly coordination</div>
-                            <div className="service-feature">Consistent customer experience</div>
-                            <div className="service-feature">Operational alignment</div>
+                            <div className="service-feature">Consistent processing standards</div>
+                            <div className="service-feature">High-volume plant capacity</div>
+                            <div className="service-feature">Documentation on request</div>
                         </div>
 
                         <div className="service-actions">
-                            <Button to="/contact" variant="primary" size="sm">Talk to us</Button>
+                            <Button to="/contact" variant="primary" size="sm">Partner With Us</Button>
                             <Button to="/about" variant="ghost" size="sm">About</Button>
                         </div>
                     </div>
@@ -156,61 +149,14 @@ export default function Services() {
 
             </Section>
 
-
-
-
-            <>
-
-
-                <Section
-                    tone="gradient"
-                    eyebrow="Coverage"
-                    title="Local pickup coverage"
-                    subtitle="Replace these with real coverage cities/counties from your client."
-
-                >
-                    <div className="grid-2">
-                        <div className="panel">
-                            <h3 className="h3">Areas we serve</h3>
-                            <div className="pill-grid">
-                                {areas.map((a) => (
-                                    <span key={a} className="pill">{a}</span>
-                                ))}
-                            </div>
-                            <p className="muted">
-                                If you’re unsure whether you’re in range, submit a request. We’ll confirm quickly.
-                            </p>
-                            <Button to="/contact" variant="primary" size="sm">Request pickup</Button>
-                        </div>
-
-                        <div className="panel">
-                            <h3 className="h3">Map</h3>
-                            <p className="muted">
-                                Replace this iframe with your Google Maps embed (business address or coverage area).
-                            </p>
-                            <div className="map">
-                                <iframe
-                                    title="Service Area Map"
-                                    src="https://www.google.com/maps?q=United%20States&output=embed"
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </Section>
-            </>
             <section className="cta-band">
                 <div className="container cta-band-inner">
                     <div>
-                        <h2 className="h2">Need pickup scheduling that’s simple?</h2>
-                        <p className="lead">Use our request form — we’ll respond quickly and confirm the next steps.</p>
+                        <h2 className="h2">Planning or expanding an appliance recycling program?</h2>
+                        <p className="lead">Tell us about your program and territory — we’ll follow up to discuss how we can support it.</p>
                     </div>
                     <div className="cta-actions">
-                        <Button to="/contact" variant="primary" size="lg">Request Pickup</Button>
-                        <Button href="tel:+14843691217" variant="secondary" size="sm" className="cta-btn">
-                            Call Now
-                        </Button>
+                        <Button to="/contact" variant="primary" size="lg">Partner With Us</Button>
                     </div>
                 </div>
             </section>

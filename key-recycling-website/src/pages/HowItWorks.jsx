@@ -81,11 +81,11 @@ export default function HowItWorks() {
                     <div className="hero-copy">
                         <h1 className="h1">How It Works</h1>
                         <p className="hero-lead">
-                            A simple, transparent process from request to responsible recycling—built to make customers feel confident.
+                            How a utility appliance recycling program runs with Key Recycling — from enrollment to recovered materials.
                         </p>
                         <div className="hero-actions">
-                            <Button to="/contact" variant="primary" size="lg">Request Pickup</Button>
-                            <Button to="/services" variant="secondary" size="lg">Services</Button>
+                            <Button to="/contact" variant="primary" size="lg">Partner With Us</Button>
+                            <Button to="/services" variant="secondary" size="lg">Our Services</Button>
                         </div>
                     </div>
                 </div>
@@ -97,47 +97,47 @@ export default function HowItWorks() {
                 tone="gradient"
                 eyebrow="How it works"
                 title="Simple process. Clear steps."
-                subtitle="Three steps from request to recycling — designed to feel easy for customers."
+                subtitle="Three steps from program enrollment to recovered materials."
             >
                 <div className="reveal" ref={howRef}>
                     <div className="timeline-steps timeline-steps--premium">
                         <div className="step step--card">
                             <div className="step-num">1</div>
                             <div>
-                                <div className="step-title">Request pickup</div>
-                                <div className="">Tell us what you have, where it is, and your preferred pickup window.</div>
+                                <div className="step-title">Customer enrolls with the utility</div>
+                                <div className="">The program enrolls the participant and sends us the order.</div>
                             </div>
                         </div>
 
                         <div className="step step--card">
                             <div className="step-num">2</div>
                             <div>
-                                <div className="step-title">Confirm & schedule</div>
-                                <div className="">We confirm access details and schedule a time that works for you.</div>
+                                <div className="step-title">We collect</div>
+                                <div className="">Our crews collect the unit and confirm it in program records.</div>
                             </div>
                         </div>
 
                         <div className="step step--card">
                             <div className="step-num">3</div>
                             <div>
-                                <div className="step-title">Recycle responsibly</div>
-                                <div className="">Units are handled and processed with safety and environmental responsibility in mind.</div>
+                                <div className="step-title">We recycle & report</div>
+                                <div className="">The unit is processed at our plant with materials recovery and reporting back to the program.</div>
                             </div>
                         </div>
 
                     </div>
                     <div className="grid-3">
                         <div className="panel">
-                            <h3 className="h3">Access info</h3>
-                            <p className="">Stairs, gates, narrow doors, elevator access, or loading docks.</p>
+                            <h3 className="h3">Collection</h3>
+                            <p className="">Our own crews collect units from program participants and verify each unit against the program order at pickup.</p>
                         </div>
                         <div className="panel">
-                            <h3 className="h3">Appliance details</h3>
-                            <p className="">Refrigerator/freezer type, approximate size, and any notes.</p>
+                            <h3 className="h3">Processing</h3>
+                            <p className="">Units are deconstructed at our plant, with refrigerant and foam blowing-agent recovery and over 95% of materials recycled or responsibly handled.</p>
                         </div>
                         <div className="panel">
-                            <h3 className="h3">Preferred timing</h3>
-                            <p className="">A date range or preferred days helps schedule faster.</p>
+                            <h3 className="h3">Reporting</h3>
+                            <p className="">Unit-level records are delivered back to the program to support verification and savings reporting.</p>
                         </div>
                     </div>
 
@@ -194,11 +194,7 @@ export default function HowItWorks() {
 
                 </div>
                 <div className="center-row">
-                    <Button to="/contact" variant="primary" size="md">Request pickup</Button>
-                    <Button href="tel:+14843691217" variant="secondary" size="sm" className="cta-btn">
-                        Call Now
-                    </Button>
-
+                    <Button to="/contact" variant="primary" size="md">Partner With Us</Button>
                 </div>
             </Section>
 
@@ -334,76 +330,6 @@ export default function HowItWorks() {
             </Section>
 
 
-            {/* <Section
-                tone="soft"
-                eyebrow="Step-by-step"
-                title="Three steps that customers understand"
-                subtitle="Clear steps reduce friction and increase trust."
-            >
-                <div className="timeline-steps">
-                    <div className="step step--wide">
-                        <div className="step-num">1</div>
-                        <div>
-                            <div className="step-title">Submit a pickup request</div>
-                            <div className="muted">
-                                Tell us what you’re recycling (refrigerator, freezer, or commercial unit), the pickup address, and any access notes.
-                                If the unit is in a basement, behind a gate, or requires special handling, include that too.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="step step--wide">
-                        <div className="step-num">2</div>
-                        <div>
-                            <div className="step-title">We confirm details & schedule</div>
-                            <div className="muted">
-                                We review your request, confirm the details, and coordinate an appointment time. For businesses, we can coordinate around
-                                docks, access windows, and volume.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="step step--wide">
-                        <div className="step-num">3</div>
-                        <div>
-                            <div className="step-title">Pickup & responsible recycling</div>
-                            <div className="muted">
-                                We handle pickup professionally and follow a responsibility-minded recycling workflow. The goal is to minimize environmental
-                                impact and recover useful materials wherever possible.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="center-row">
-                    <Button to="/contact" variant="primary" size="md">Request pickup</Button>
-                    <Button href="tel:+14843691217" variant="secondary" size="sm" className="cta-btn">
-                        Call Now
-                    </Button>
-                </div>
-            </Section> */}
-
-            {/* <Section
-                tone="soft"
-                eyebrow="What to prepare"
-                title="Make pickup smoother in minutes"
-                subtitle="These quick details help avoid delays and make pickup predictable."
-            >
-                <div className="grid-3">
-                    <div className="panel">
-                        <h3 className="h3">Access info</h3>
-                        <p className="muted">Stairs, gates, narrow doors, elevator access, or loading docks.</p>
-                    </div>
-                    <div className="panel">
-                        <h3 className="h3">Appliance details</h3>
-                        <p className="muted">Refrigerator/freezer type, approximate size, and any notes.</p>
-                    </div>
-                    <div className="panel">
-                        <h3 className="h3">Preferred timing</h3>
-                        <p className="muted">A date range or preferred days helps schedule faster.</p>
-                    </div>
-                </div>
-            </Section> */}
             <Lightbox
                 open={lightboxOpen}
                 images={plantImages}

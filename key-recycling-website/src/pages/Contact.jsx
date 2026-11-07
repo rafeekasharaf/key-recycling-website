@@ -1,24 +1,32 @@
 import { useState } from "react";
 import Section from "../components/Section";
 import Button from "../components/Button";
+import HomeownerNotice, { HOMEOWNER_NOTICE_TEXT } from "../components/HomeownerNotice";
 import contactImg from "../assets/images/contact-hero.jpg";
+
+const HOMEOWNER = "I'm a homeowner with an appliance to recycle";
 
 export default function Contact() {
     const [msg, setMsg] = useState("");
+    const [orgType, setOrgType] = useState("");
+    const isHomeowner = orgType === HOMEOWNER;
 
     function onSubmit(e) {
         e.preventDefault();
+        if (isHomeowner) return;
+
         const form = new FormData(e.currentTarget);
         const data = Object.fromEntries(form.entries());
 
-        const subject = encodeURIComponent("Pickup Request - Key Recycling LLC");
+        const subject = encodeURIComponent(`Program Partnership Inquiry – ${data.organization}`);
         const body = encodeURIComponent(
-            `Pickup Request\n\nName: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone}\nAddress: ${data.address}\nAppliance: ${data.appliance}\nPreferred Date: ${data.date}\nNotes: ${data.notes}\n`
+            `Program Partnership Inquiry\n\nName: ${data.name}\nWork Email: ${data.email}\nOrganization: ${data.organization}\nRole: ${data.role}\nOrganization Type: ${data.orgType}\nStates / Service Territory: ${data.territory}\nEstimated Annual Volume: ${data.volume}\n\nMessage:\n${data.message}\n`
         );
 
         window.location.href = `mailto:KeyRecyclingLLC@Gmail.com?subject=${subject}&body=${body}`;
-        setMsg("Opening your email app with the pickup request…");
+        setMsg("Opening your email app with your inquiry…");
         e.currentTarget.reset();
+        setOrgType("");
     }
 
     return (
@@ -32,9 +40,9 @@ export default function Contact() {
                 />
                 <div className="container page-hero-inner">
                     <div className="hero-copy">
-                        <h1 className="h1">Contact & Pickup Requests</h1>
+                        <h1 className="h1">Partner With Key Recycling</h1>
                         <p className="hero-lead">
-                            Send a pickup request in under a minute. We’ll confirm scheduling and next steps as quickly as possible.
+                            For utilities, program administrators, and implementers.
                         </p>
                     </div>
                 </div>
@@ -42,62 +50,91 @@ export default function Contact() {
 
             <Section
                 tone="plain"
-                eyebrow="Request pickup"
-                title="Fast, simple pickup request form"
-                subtitle="This is a static site, so the form opens email by default. (We can switch to Netlify Forms/Formspree anytime.)"
+                eyebrow="Program inquiry"
+                title="Tell us about your program"
+                subtitle="We typically respond within 1–2 business days."
             >
+                <div style={{ marginBottom: 18 }}>
+                    <HomeownerNotice />
+                </div>
+
                 <div className="grid-2">
                     <div className="panel">
-                        <h3 className="h3">Pickup request</h3>
+                        <h3 className="h3">Program inquiry</h3>
                         <form className="form" onSubmit={onSubmit}>
                             <div className="form-row">
                                 <div className="field">
-                                    <label>Full Name</label>
+                                    <label>Full Name*</label>
                                     <input name="name" placeholder="Your name" required />
                                 </div>
                                 <div className="field">
-                                    <label>Email</label>
-                                    <input name="email" type="email" placeholder="you@email.com" required />
+                                    <label>Work Email*</label>
+                                    <input name="email" type="email" placeholder="you@organization.com" required />
                                 </div>
                             </div>
 
                             <div className="form-row">
                                 <div className="field">
-                                    <label>Phone</label>
-                                    <input name="phone" placeholder="(xxx) xxx-xxxx" />
+                                    <label>Organization*</label>
+                                    <input name="organization" placeholder="Utility or company name" required />
                                 </div>
                                 <div className="field">
-                                    <label>Appliance</label>
-                                    <select name="appliance" required>
-                                        <option value="">Select…</option>
-                                        <option>Refrigerator</option>
-                                        <option>Freezer</option>
-                                        <option>Commercial Unit</option>
-                                        <option>Other</option>
-                                    </select>
+                                    <label>Your Role</label>
+                                    <input name="role" placeholder="e.g. Program Manager" />
                                 </div>
                             </div>
 
                             <div className="field">
-                                <label>Pickup Address</label>
-                                <input name="address" placeholder="Street, City, State, Zip" required />
+                                <label>Organization Type*</label>
+                                <select
+                                    name="orgType"
+                                    required
+                                    value={orgType}
+                                    onChange={(e) => setOrgType(e.target.value)}
+                                >
+                                    <option value="">Select…</option>
+                                    <option>Utility</option>
+                                    <option>Program implementer / administrator</option>
+                                    <option>Retailer or bulk partner</option>
+                                    <option>Other organization</option>
+                                    <option>{HOMEOWNER}</option>
+                                </select>
                             </div>
 
-                            <div className="form-row">
-                                <div className="field">
-                                    <label>Preferred Date</label>
-                                    <input name="date" type="date" />
+                            {isHomeowner ? (
+                                <div className="recycle-note" role="alert">
+                                    <p className="muted" style={{ margin: 0 }}>{HOMEOWNER_NOTICE_TEXT}</p>
                                 </div>
-                                <div className="field">
-                                    <label>Notes</label>
-                                    <input name="notes" placeholder="Stairs, gate code, access notes…" />
-                                </div>
-                            </div>
+                            ) : (
+                                <>
+                                    <div className="form-row">
+                                        <div className="field">
+                                            <label>States / Service Territory</label>
+                                            <input name="territory" placeholder="e.g. Pennsylvania, Ohio" />
+                                        </div>
+                                        <div className="field">
+                                            <label>Estimated Annual Volume</label>
+                                            <select name="volume" defaultValue="">
+                                                <option value="">Select…</option>
+                                                <option>Under 1,000</option>
+                                                <option>1,000–10,000</option>
+                                                <option>10,000–50,000</option>
+                                                <option>50,000+</option>
+                                                <option>Not sure</option>
+                                            </select>
+                                        </div>
+                                    </div>
 
-                            <div className="form-actions">
-                                <Button type="submit" variant="primary" size="md">Send Request</Button>
-                                <Button href="tel:+14843691217" variant="secondary" size="md">Call Now</Button>
-                            </div>
+                                    <div className="field">
+                                        <label>Message*</label>
+                                        <textarea name="message" placeholder="Tell us about your program, timeline, and needs." required />
+                                    </div>
+
+                                    <div className="form-actions">
+                                        <Button type="submit" variant="primary" size="md">Send Inquiry</Button>
+                                    </div>
+                                </>
+                            )}
 
                             {msg ? <p className="muted" style={{ marginTop: 10 }}>{msg}</p> : null}
                         </form>
@@ -106,7 +143,7 @@ export default function Contact() {
                     <div className="panel">
                         <h3 className="h3">Contact details</h3>
                         <p className="muted">
-                            You can reach us directly or submit a pickup request using the form.
+                            Inquiries: Utilities & program partners only
                         </p>
 
                         <div className="contact-box">
@@ -124,7 +161,7 @@ export default function Contact() {
                             </div>
                             <div className="contact-row">
                                 <strong>Service</strong>
-                                <span>Refrigerator & Freezer Recycling</span>
+                                <span>Utility appliance recycling programs</span>
                             </div>
                         </div>
 
